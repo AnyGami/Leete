@@ -34,29 +34,40 @@
     </style>
 </head>
 
- <script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.iframeElement = document.getElementById('contentFrame');
+        });
+
         function loadIframeContent(url) {
-            document.getElementById('contentFrame').src = url;
+            if (!window.iframeElement) {
+                alert("Iframe is not ready yet. Please try again.");
+                return;
+            }
+            window.iframeElement.src = url;
         }
 
         function copyToClipboard() {
-            const iframe = document.getElementById('contentFrame');
-            const doc = iframe.contentDocument || iframe.contentWindow.document;
-            if (!doc || !doc.body) {
+            const iframe = window.iframeElement;
+            if (!iframe || !iframe.contentDocument) {
                 alert("Content is not loaded yet. Please try again.");
                 return;
             }
 
-            const range = document.createRange();
-            range.selectNodeContents(doc.body);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            document.execCommand('copy');
-            alert("Copied to clipboard!");
+            try {
+                const doc = iframe.contentDocument || iframe.contentWindow.document;
+                const range = document.createRange();
+                range.selectNodeContents(doc.body);
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                document.execCommand('copy');
+                alert("Copied to clipboard!");
+            } catch (error) {
+                alert("Unable to copy content due to security restrictions.");
+            }
         }
     </script>
-</body>
 <body>
     <div class="sidebar">
          <button onclick="copyIframeContent()">Copy to Clipboard</button>
