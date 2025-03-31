@@ -29,6 +29,8 @@
         .content {
             flex-grow: 1;
             border: none;
+            width: 100%;
+            height: 100vh;
         }
         .button {
             width: 100%;
@@ -67,7 +69,7 @@
             window.iframeElement.src = url;
         }
 
-        function copyToClipboard() {
+        async function copyToClipboard() {
             const iframe = window.iframeElement;
             if (!iframe || !iframe.contentWindow || !iframe.contentDocument) {
                 alert("Content is not loaded yet. Please try again.");
@@ -76,15 +78,20 @@
 
             try {
                 const doc = iframe.contentDocument || iframe.contentWindow.document;
-                const range = document.createRange();
-                range.selectNodeContents(doc.body);
-                const selection = window.getSelection();
-                selection.removeAllRanges();
-                selection.addRange(range);
-                document.execCommand('copy');
-                alert("Copied to clipboard!");
+                const htmlContent = doc.body.innerHTML;
+
+                // Use Clipboard API to copy formatted content
+                await navigator.clipboard.write([
+                    new ClipboardItem({
+                        "text/html": new Blob([htmlContent], { type: "text/html" }),
+                        "text/plain": new Blob([doc.body.innerText], { type: "text/plain" })
+                    })
+                ]);
+
+                alert("Formatted content copied to clipboard!");
             } catch (error) {
-                alert("Unable to copy content due to security restrictions.");
+                console.error("Clipboard Copy Error:", error);
+                alert("Unable to copy content due to browser restrictions.");
             }
         }
     </script>
