@@ -87,23 +87,35 @@
     <div class="sidebar">
          <button onclick="copyIframeContent()">Copy to Clipboard</button>
         <h2>Invoices</h2>
-        <a href="https://anygami.github.io/Leete/invoice_new.html" target="contentFrame">New Invoice</a>
-        <a href="https://anygami.github.io/Leete/invoice_new.html" target="contentFrame">New Invoices</a>
-        <a href="https://anygami.github.io/Leete/invoice_new.html" target="contentFrame">Freindly Remider</a>
-        <a href="https://anygami.github.io/Leete/invoice_new.html" target="contentFrame">Past Due</a>
-        <a href="https://anygami.github.io/Leete/invoice_new.html" target="contentFrame">DNS</a>
-        <a href="https://anygami.github.io/Leete/invoice_new.html" target="contentFrame">Collections Thrreat</a>
-        <h2>Eestimate</h2>
-        <a href="" target="contentFrame">New Estimate</a>
-        <a href="" target="contentFrame">Estimate Remainder</a>
-        <a href="" target="contentFrame">Final Estimate</a>
-        <h2>Agreements</h2>
-        <a href="" target="contentFrame">New Agreement</a>
-        <a href="" target="contentFrame">Agreement Remainder</a>
-        <a href="" target="contentFrame">Final Agreement</a>        
+    <button onclick="updateIframe('Content 1: <b>Bold Text</b><br><i>Italic Text</i>')">Load Content 1</button>
+    <button onclick="updateIframe('Content 2: <h2>Heading</h2><p>This is a paragraph.</p>')">Load Content 2</button>
+    <button onclick="updateIframe('Content 3: <ul><li>Item 1</li><li>Item 2</li></ul>')">Load Content 3</button>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
         
         
     </div>
     <iframe name="contentFrame" class="content"><h2>Loading...</h2></iframe>
+
+    <script>
+        function updateIframe(content) {
+            const iframe = document.getElementById('contentFrame');
+            const doc = iframe.contentDocument || iframe.contentWindow.document;
+            doc.open();
+            doc.write(content);
+            doc.close();
+        }
+
+        function copyToClipboard() {
+            const iframe = document.getElementById('contentFrame');
+            const doc = iframe.contentDocument || iframe.contentWindow.document;
+            const range = document.createRange();
+            range.selectNodeContents(doc.body);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            document.execCommand('copy');
+            alert("Copied to clipboard!");
+        }
+    </script>
 </body>
 </html>
