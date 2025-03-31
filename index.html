@@ -37,12 +37,15 @@
     <div class="sidebar">
          <button onclick="copyIframeContent()">Copy to Clipboard</button>
         <h2>Invoices</h2>
-<button onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">New Invoice</button>
-    <button onclick="loadIframeContent('https://example.com/content2.html')">Load Content 2</button>
-    <button onclick="loadIframeContent('https://example.com/content3.html')">Load Content 3</button>
-    <button onclick="copyToClipboard()">Copy to Clipboard</button>
-    <button onclick="copyToClipboard()">Copy to Clipboard</button>
-        
+<table>
+    <tr>
+        <td><button onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">New Invoice</button></td>
+        <td><button onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new_x2.html')">Multi</button></td>
+    </tr>
+    <tr><td><button onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">New Invoice</button></td></tr>
+    <tr><td><button onclick="loadIframeContent('https://example.com/content2.html')">Load Content 2</button></td></tr>
+    <tr><td><button onclick="loadIframeContent('https://example.com/content3.html')">Load Content 3</button></td></tr>
+</table>
         
     </div>
     <iframe name="contentFrame" class="content"><h2>Loading...</h2></iframe>
