@@ -30,32 +30,30 @@
             flex-grow: 1;
             border: none;
         }
-         .button {
-             width:100%;
-              background: linear-gradient(135deg, #007bff, #0056b3);
-              color: white;
-              padding: 12px 24px;
-              font-size: 16px;
-              font-weight: bold;
-              border: none;
-              border-radius: 8px;
-              cursor: pointer;
-              transition: all 0.3s ease;
-              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            }
-            
-            .button:hover {
-              background: linear-gradient(135deg, #0056b3, #003d80);
-              transform: scale(1.05);
-            }
-            
-            .button:active {
-              transform: scale(0.95);
-              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            }
+        .button {
+            width: 100%;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #0056b3, #003d80);
+            transform: scale(1.05);
+        }
+        .button:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
-
+<body>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             window.iframeElement = document.getElementById('contentFrame');
@@ -71,7 +69,7 @@
 
         function copyToClipboard() {
             const iframe = window.iframeElement;
-            if (!iframe || !iframe.contentDocument) {
+            if (!iframe || !iframe.contentWindow || !iframe.contentDocument) {
                 alert("Content is not loaded yet. Please try again.");
                 return;
             }
@@ -90,22 +88,31 @@
             }
         }
     </script>
-<body>
-    <div class="sidebar">
-         <button onclick="copyIframeContent()">Copy to Clipboard</button>
-        <h2>Invoices</h2>
-<table>
-    <tr>
-        <td><button onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">New Invoice</button></td>
-        <td><button onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new_x2.html')">Multi</button></td>
-    </tr>
-    <tr><td colspan="2"><button onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">Friendly Reminder</button></td></tr>
-    <tr><td colspan="2"><button onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">Past Due</button></td></tr>
-    <tr><td colspan="2"><button onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">DNS</button></td></tr>
-    <tr><td colspan="2"><button onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">Collections Threat</button></td></tr>
-</table>
-        
-    </div>
-    <iframe name="contentFrame" class="content"><h2>Loading...</h2></iframe>
 
+    <div class="sidebar">
+        <button class="button" onclick="copyToClipboard()">Copy to Clipboard</button>
+        <h2>Invoices</h2>
+        <table>
+            <tr>
+                <td><button class="button" onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">New Invoice</button></td>
+                <td><button class="button" onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new_x2.html')">Multi</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="button" onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">Friendly Reminder</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="button" onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">Past Due</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="button" onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">DNS</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="button" onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">Collections Threat</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <iframe id="contentFrame" name="contentFrame" class="content"></iframe>
+
+</body>
 </html>
