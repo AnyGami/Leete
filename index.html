@@ -47,18 +47,19 @@
     </div>
     <iframe name="contentFrame" class="content"><h2>Loading...</h2></iframe>
 
-    <script>
-        function updateIframe(content) {
-            const iframe = document.getElementById('contentFrame');
-            const doc = iframe.contentDocument || iframe.contentWindow.document;
-            doc.open();
-            doc.write(content);
-            doc.close();
+ <script>
+        function loadIframeContent(url) {
+            document.getElementById('contentFrame').src = url;
         }
 
         function copyToClipboard() {
             const iframe = document.getElementById('contentFrame');
             const doc = iframe.contentDocument || iframe.contentWindow.document;
+            if (!doc || !doc.body) {
+                alert("Content is not loaded yet. Please try again.");
+                return;
+            }
+
             const range = document.createRange();
             range.selectNodeContents(doc.body);
             const selection = window.getSelection();
