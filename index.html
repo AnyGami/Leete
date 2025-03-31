@@ -32,57 +32,7 @@
         }
     </style>
 </head>
-   <script>
-        function setIframeContent() {
-            const iframe = document.getElementById("contentFrame");
-            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-            
-            // Example: Setting new content inside the iframe
-            const newContent = `<p style="color: blue;">This is <strong>formatted</strong> HTML content.</p>`;
-            
-            iframeDoc.open();
-            iframeDoc.write(newContent);
-            iframeDoc.close();
-        }
 
-        async function copyIframeContent() {
-            const iframe = document.getElementById("contentFrame");
-            if (!iframe) {
-                console.error("Iframe not found");
-                return;
-            }
-
-            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-            if (!iframeDoc || !iframeDoc.body) {
-                console.error("Iframe document not loaded");
-                return;
-            }
-
-            const htmlContent = iframeDoc.body.innerHTML;
-
-            // Use execCommand as a workaround to copy formatted HTML
-            const tempDiv = document.createElement("div");
-            tempDiv.contentEditable = true;
-            tempDiv.innerHTML = htmlContent;
-            document.body.appendChild(tempDiv);
-
-            const range = document.createRange();
-            range.selectNodeContents(tempDiv);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-
-            try {
-                document.execCommand("copy");
-                alert("Copied to clipboard!");
-            } catch (err) {
-                console.error("Failed to copy:", err);
-            }
-
-            // Cleanup
-            document.body.removeChild(tempDiv);
-        }
-    </script>
 <body>
     <div class="sidebar">
          <button onclick="copyIframeContent()">Copy to Clipboard</button>
