@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leete Generators Invoice</title>
+</head>
+<body style="background-color: #f0f2f5; font-family: Arial, sans-serif; color: #333; line-height: 1.6; padding: 30px 15px;">
+
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);">
+          
+          <!-- Header -->
+          <tr>
+            <td align="center" style="background: linear-gradient(135deg, #fdd835, #ffeb3b); font-family: monospace; text-align: center; padding: 10px 0; font-size: 24px; font-weight: 900; color: #222; border-bottom: 4px solid #fbc02d;">
+              Leete Generators
+            </td>
+          </tr>
+
+          <!-- Main Message -->
+          <tr>
+            <td align="center" style="padding: 20px;">
+              <h2 style="margin-bottom: 10px;">Thank you for your business! Your Invoice is Attached.</h2>
+            </td>
+          </tr>
+
+          <!-- Two Column Layout -->
+          <tr>
+            <td>
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <!-- Left Column -->
+                  <td width="50%" valign="top" style="background-color: #fef9f5; padding: 20px; border-right: 1px solid #f0f0f0;">
+                    <h3 style="margin-bottom: 5px;"><span style="display: inline-block; background-color: #fdd835; color: #333; padding: 4px 10px; border-radius: 8px; font-weight: 600;">1</span> Pay by Check:</h3>
+                    <p style="margin-left: 20px;">Leete Generators<br>3360 McMaude Pl<br>Santa Rosa, CA 95407</p>
+
+                    <h3 style="margin-top: 15px;"><span style="display: inline-block; background-color: #fdd835; color: #333; padding: 4px 10px; border-radius: 8px; font-weight: 600;">2</span> Online Payment via BILL:</h3>
+                    <p>We offer online payment through BILL, which allows you to pay using credit cards* or bank transfers.</p>
+                    <p style="color: blue; text-align: center;">To choose the BILL payment option, let us know, and we will send a follow-up email.</p>
+
+                    <h3 style="margin-top: 15px;"><span style="display: inline-block; background-color: #fdd835; color: #333; padding: 4px 10px; border-radius: 8px; font-weight: 600;">3</span> Over the Phone Payment:</h3>
+                    <p>Call us to pay using Visa, Mastercard, or American Express*.</p>
+
+                    <h3 style="margin-top: 15px;"><span style="display: inline-block; background-color: #fdd835; color: #333; padding: 4px 10px; border-radius: 8px; font-weight: 600;">4</span> Auto Pay:</h3>
+                    <p>We can keep a credit card<sup style="color: red;">†</sup> on file and auto-charge it when your next invoice is created.</p>
+                    
+                    <hr style="border: 1px solid #eee;">
+                    <p><sup style="color: red;">†</sup> A 3% + sales tax credit card processing fee applies.</p>
+                  </td>
+
+                  <!-- Right Column -->
+                  <td width="50%" valign="top" style="background-color: #f0faff; padding: 20px;">
+                    <h2 style="margin-bottom: 5px;">💡 Our mission is simple:</h2>
+                    <h2 style="text-align: center; word-spacing: 25px;">POWER. ON. ALWAYS.</h2>
+                    <p>Monitor oil levels during power outages. Your generator may run for 15 minutes after power restoration for a cool-down session. See your manual for details.</p>
+                    <p><b>New!</b> Visit our blog for interviews, training videos, tips, and more.</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Contact Section -->
+          <tr>
+            <td align="center" style="background-color: #1e3a8a; color: white; padding: 20px;">
+              <p>Need help or want to share feedback? We’re just one click away.</p>
+              <p>The Accounting Team<br>
+              <a href="mailto:Accounting@LeeteGenerators.com" style="color: white; text-decoration: none;">Accounting@LeeteGenerators.com</a><br>
+              (707) 545-0484 ext. 3<br>
+              <i>1908-2025 Celebrating 117 years</i></p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td align="center" style="background-color: #111827; color: white; font-size: 0.85rem; padding: 15px;">
+              <p>⚠️ <b>Warning:</b> We will never request banking info via email. Report any requests immediately.</p>
+              <p>Text SMS: By providing your mobile phone, you agree to SMS/Text contact. Carrier rates may apply.<br>
+              Reply STOP to opt-out. See: <a href="https://leetegenerators.com/sms" style="color: #90cdf4;">leetegenerators.com/sms</a> for details.</p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
