@@ -34,7 +34,7 @@
 </head>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const iframe = document.getElementById("myIframe");
+            const iframe = document.getElementById("contentFrame");
             const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
             
             // Set the iframe content
@@ -44,7 +44,7 @@
         });
 
         async function copyIframeContent() {
-            const iframe = document.getElementById("myIframe");
+            const iframe = document.getElementById("contentFrame");
             if (!iframe) {
                 console.error("Iframe not found");
                 return;
