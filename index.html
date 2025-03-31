@@ -32,16 +32,18 @@
         }
     </style>
 </head>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
+   <script>
+        function setIframeContent() {
             const iframe = document.getElementById("contentFrame");
             const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
             
-            // Set the iframe content
+            // Example: Setting new content inside the iframe
+            const newContent = `<p style="color: blue;">This is <strong>formatted</strong> HTML content.</p>`;
+            
             iframeDoc.open();
-            iframeDoc.write("<p>This is a <strong>test</strong> email content.</p>");
+            iframeDoc.write(newContent);
             iframeDoc.close();
-        });
+        }
 
         async function copyIframeContent() {
             const iframe = document.getElementById("contentFrame");
@@ -58,16 +60,27 @@
 
             const htmlContent = iframeDoc.body.innerHTML;
 
-            try {
-                // Create a Blob with HTML content
-                const blob = new Blob([htmlContent], { type: "text/html" });
-                const clipboardItem = new ClipboardItem({ "text/html": blob });
+            // Use execCommand as a workaround to copy formatted HTML
+            const tempDiv = document.createElement("div");
+            tempDiv.contentEditable = true;
+            tempDiv.innerHTML = htmlContent;
+            document.body.appendChild(tempDiv);
 
-                await navigator.clipboard.write([clipboardItem]);
+            const range = document.createRange();
+            range.selectNodeContents(tempDiv);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+
+            try {
+                document.execCommand("copy");
                 alert("Copied to clipboard!");
             } catch (err) {
-                console.error("Failed to copy: ", err);
+                console.error("Failed to copy:", err);
             }
+
+            // Cleanup
+            document.body.removeChild(tempDiv);
         }
     </script>
 <body>
