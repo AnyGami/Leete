@@ -32,17 +32,37 @@
         }
     </style>
 </head>
-     <script>
-        async function copyIframeContent() {
-            const iframe = document.getElementById("contentFrame");
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const iframe = document.getElementById("myIframe");
             const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            // Set the iframe content
+            iframeDoc.open();
+            iframeDoc.write("<p>This is a <strong>test</strong> email content.</p>");
+            iframeDoc.close();
+        });
+
+        async function copyIframeContent() {
+            const iframe = document.getElementById("myIframe");
+            if (!iframe) {
+                console.error("Iframe not found");
+                return;
+            }
+
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            if (!iframeDoc || !iframeDoc.body) {
+                console.error("Iframe document not loaded");
+                return;
+            }
+
             const htmlContent = iframeDoc.body.innerHTML;
 
-            // Create a temporary element to hold HTML content
-            const blob = new Blob([htmlContent], { type: "text/html" });
-            const clipboardItem = new ClipboardItem({ "text/html": blob });
-
             try {
+                // Create a Blob with HTML content
+                const blob = new Blob([htmlContent], { type: "text/html" });
+                const clipboardItem = new ClipboardItem({ "text/html": blob });
+
                 await navigator.clipboard.write([clipboardItem]);
                 alert("Copied to clipboard!");
             } catch (err) {
