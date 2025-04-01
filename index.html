@@ -60,6 +60,10 @@
         .gree:hover { background: linear-gradient(135deg, #00703c, #005026); }
         .purp:hover { background: linear-gradient(135deg, #6610f2, #4b0082); }
         .pink:hover { background: linear-gradient(135deg, #e60073, #9b0064); }
+
+        .gold { background: linear-gradient(135deg, #ffcc00, #e0a800); }
+        .gold:hover { background: linear-gradient(135deg, #e0a800, #b78800); }
+        
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -105,7 +109,7 @@
 
     <div class="sidebar">
         <table>
-            <tr><td colspan="2"><button class="button" onclick="copyToClipboard()">Copy to Clipboard</button></td></tr>
+            <tr><td colspan="2"><button class="button gold" onclick="copyToClipboard()">Copy to Clipboard</button></td></tr>
             <tr><td colspan="2"><h2>Invoices</h2></td></tr>
             <tr>
                 <td><button class="button blue" onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">New Single</button></td>
