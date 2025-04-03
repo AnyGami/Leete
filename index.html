@@ -91,6 +91,7 @@
         });
 
         function loadIframeContent(url) {
+            document.getElementById("fun").style.display = "none";
             if (!window.iframeElement) {
                 alert("Iframe is not ready yet. Please try again.");
                 return;
@@ -191,6 +192,7 @@
         </table>
     </div>
 <div id="right">
+    <div id="fun"><h1>Curtis' HTML Email Toybox</h1></div>
     <iframe id="contentFrame" name="contentFrame" class="content"  ></iframe></div>
 
 </body>
