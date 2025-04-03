@@ -83,11 +83,7 @@
         
     </style>
 
-       <script>
-        function updateIframe() {
-            document.getElementById('contentFrame').srcdoc = "<h2>New content loaded!</h2><p>This content has replaced the initial text.</p>";
-        }
-    </script>
+
     
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -195,7 +191,7 @@
         </table>
     </div>
 <div id="right">
-    <iframe id="contentFrame" name="contentFrame" class="content"></iframe></div>
+    <iframe id="contentFrame" name="contentFrame" class="content" srcdoc="<p>Initial content inside the iframe.</p>" ></iframe></div>
 
 </body>
 </html>
