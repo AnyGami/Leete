@@ -26,6 +26,15 @@
         .sidebar a:hover {
             background-color: #575757;
         }
+
+        .right {
+           
+            background-color: #666;
+            padding:5px;
+           
+           
+        }
+        
         .content {
             flex-grow: 1;
             border: none;
@@ -166,7 +175,7 @@
                 <td colspan="2"><button class="button pink" onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">Proposal</button></td>
             </tr>
             <tr>
-                <td colspan="2"><button class="button pink" onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">Depoist</button></td>
+                <td colspan="2"><button class="button pink" onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">Depost</button></td>
             </tr>
             <tr>
                 <td colspan="2"><button class="button pink" onclick="loadIframeContent('https://anygami.github.io/Leete/invoice_new.html')">Reminder</button></td>
@@ -176,8 +185,8 @@
             </tr>  
         </table>
     </div>
-
-    <iframe id="contentFrame" name="contentFrame" class="content"></iframe>
+<div id="right">
+    <iframe id="contentFrame" name="contentFrame" class="content"></iframe></div>
 
 </body>
 </html>
