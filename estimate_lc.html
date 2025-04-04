@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Modern Email-Inspired Layout</title>
+        <style>
+            * {
+              box-sizing: border-box;
+              margin: 0;
+              padding: 0;
+            }
+
+            body {
+              background-color: #f0f2f5;
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+              color: #333;
+              line-height: 1.6;
+              padding: 30px 15px;
+            }
+
+            .container {
+              max-width: 950px;
+              margin: auto;
+              background-color: #ffffff;
+              border-radius: 16px;
+              overflow: hidden;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+              transition: box-shadow 0.3s ease;
+            }
+
+            .container:hover {
+              box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            }
+
+            #hero {
+              background: linear-gradient(135deg, #fdd835, #ffeb3b);
+                
+              text-align: center;
+              padding: 10px 5px;
+              font-size: 1.5rem;
+              font-weight: 900;
+              color: #222;
+              border-bottom: 4px solid #fbc02d;
+            }
+
+            .DNS {
+              padding: 5px 10px;
+                margin: 10px 12% 10px 12%;
+                width:75%;
+              border:3px red solid;
+                background-color:pink;
+                font-weight:600;
+                font-size: 1.1rem;
+            }
+            .green {
+              padding: 5px 10px;
+                margin: 100px 5% 5px 5%;
+                width:90%;
+              border:3px #60d96e solid;
+                background-color: hsl(127, 60%, 84%);
+                font-weight:600;
+                font-size: 1.1rem;
+            }
+            
+
+            .row {
+              display: flex;
+              flex-wrap: wrap;
+              border-top: 1px solid #eee;
+              border-bottom: 1px solid #eee;
+            }
+
+            #left,
+            #right {
+              flex: 1;
+              padding: 25px;
+            }
+
+            #left {
+              background-color: #fef9f5;
+              border-right: 1px solid #f0f0f0;
+            }
+
+            #right {
+              background-color: #f0faff;
+            }
+
+            #bot_msg {
+              background-color: #1e3a8a;
+              color: white;
+              text-align: center;
+              padding: 25px 20px;
+            }
+
+            #foot {
+              background-color: #111827;
+              color: white;
+              font-size: 0.85rem;
+              text-align: center;
+              padding: 20px;
+            }
+
+            h1, h2 {
+              font-weight: 600;
+              margin-bottom: 10px;
+              color: #222;
+            }
+
+            p {
+              margin-bottom: 15px;
+            }
+
+            .button {
+              display: inline-block;
+              background-color: #fdd835;
+              color: #333;
+              padding: 0px 14px;
+              border-radius: 8px;
+              text-decoration: none;
+              font-weight: 600;
+              margin-top: 10px;
+              transition: background-color 0.3s ease;
+            }
+
+            .button:hover {
+              background-color: #fbc02d;
+            }
+
+            a {
+              color: #90cdf4;
+              text-decoration: none;
+            }
+
+            a:hover {
+              text-decoration: underline;
+            }
+
+            @media (max-width: 600px) {
+              .row {
+                flex-direction: column;
+              }
+
+              .section {
+                padding: 25px 20px;
+              }
+
+              #hero {
+
+                font-size: 1.6rem;
+              }
+            }
+
+              .dot{font:weight:900;font-size: 1.6rem;
+                 color:red;
+                }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="hero">Thank you for your business!<br>Please see the attached estimate for details and pricing.</div>
+
+            <div class="row">
+                <div id="left">
+                    <p>We are reaching out, <i>for the last time</i>, with this repair estimate for your generator. Please approve by signing this estimate, or for ease of use, simply reply <span style="color:green"><b>APPROVED</b></span> to this email. If we do not here back within the next 15 days, we will consider this repair to be declined.  
+Feel free to contact us if you have any questions.</p> <p>We are looking forward to working with you! </p>
+                </div>
+                <div id="right">
+                    <h2>💡 Our mission is simple:</h2>
+                    <h2 style="word-spacing: 25px"><center>POWER. ON. ALWAYS.</center></h2>
+                    <p>
+                        Please be reminded it is essential to monitor oil levels on your generator during power outages,
+                        and your generator may continue to run for 15 minutes after power has been restored as it
+                        conducts a cool-down session. Please see your manual for exact specifications.
+                    </p>
+                    <p><b>New!</b> See our blog for interviews, training videos, tips, and more.</p>
+                    <div class="green"><b>NOTE:</b>&nbsp;&nbsp;&nbsp;<i>Estimate is good for 15 days.</i></div>
+                </div>
+            </div>
+
+            <div id="bot_msg">
+                <p>Need help or want to share feedback? We’re just one click away — we love hearing from you.</p>
+                The Service Team<br />
+                Service@LeeteGenerators.com<br />
+                (707) 545-0484 ext. 2<br />
+                <i>1908-2025 Celebrating 117 years</i>
+            </div>
+
+            <div id="foot">
+                ⚠️<b>Warning:</b> We will never request banking info via email. Report any requests immediately.<br />
+                Text SMS: By providing your mobile phone, you agree to SMS/Text contact. Carrier rates may apply.<br />
+                Reply STOP to opt-out. See: Leetegenerators.com/sms for details.
+            </div>
+        </div>
+    </body>
+</html>
