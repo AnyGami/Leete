@@ -81,10 +81,9 @@
   vertical-align: middle; /* This centers the text vertically */
 }
 
-
 /* Styling the div with id 'fun' */
 #fun {
-  background: radial-gradient(circle, #000428, #004e92); /* Outer space-like background */
+  background: radial-gradient(circle, #0b0c1d, #2c3e50, #4c5c68); /* Space-like background */
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
@@ -104,29 +103,23 @@
   letter-spacing: 2px;
   margin: 0;
   padding: 20px 0;
-  background: linear-gradient(90deg, #ff5e62, #ff9966, #ffbb33, #ff3366, #ff9900); /* Rainbow gradient */
-  background-size: 300% 100%;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
+  background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
-  animation: rainbow 5s linear infinite, moveText 5s linear infinite;
+  animation: rainbow 4s linear infinite;
 }
 
+/* No hover effect needed */
 #fun h1:hover {
-  color: #fff; /* Keeping the text color white on hover */
+  color: #fff;
   transform: scale(1.1);
 }
 
-/* Rainbow animation */
+/* Rainbow color movement animation */
 @keyframes rainbow {
   0% { background-position: 0% 0%; }
-  50% { background-position: 100% 0%; }
-  100% { background-position: 0% 0%; }
-}
-
-/* Left to right text movement animation */
-@keyframes moveText {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  100% { background-position: 100% 0%; }
 }
 
         
