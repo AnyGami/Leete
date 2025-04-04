@@ -83,15 +83,29 @@
 
 /* Styling the div with id 'fun' */
 #fun {
-  background: radial-gradient(circle, #0b0c1d, #2c3e50, #4c5c68); /* Space-like background */
+  position: relative;
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
   text-align: center;
   max-width: 90%;
   margin: 0 auto;
-  position: relative;
   overflow: hidden;
+  z-index: 1;
+  background: transparent; /* Transparent background for the parallax effect */
+}
+
+/* Create the starfield effect */
+#fun::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/starfield.png'); /* Starfield image */
+  background-size: 100px 100px;
+  animation: moveStars 10s linear infinite;
+  z-index: -1;
 }
 
 /* Styling the h1 inside the div with id 'fun' */
@@ -110,20 +124,18 @@
   animation: rainbow 4s linear infinite;
 }
 
-/* No hover effect needed */
-#fun h1:hover {
-  color: #fff;
-  transform: scale(1.1);
-}
-
 /* Rainbow color movement animation */
 @keyframes rainbow {
   0% { background-position: 0% 0%; }
   100% { background-position: 100% 0%; }
 }
 
-        
- 
+/* Parallax animation for the starfield */
+@keyframes moveStars {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
     </style>
 
 
